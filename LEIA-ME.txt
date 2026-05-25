@@ -1,0 +1,67 @@
+===================================================
+  SITE DA DRA. ANA CAROLINA DE CASTRO – SALT
+===================================================
+
+COMO USAR:
+----------
+1. Abra o arquivo "index.html" no navegador para visualizar o site.
+
+IMAGENS (colocar na pasta "images/"):
+--------------------------------------
+Renomeie as imagens e coloque-as dentro da pasta "images/":
+
+  images/assinatura.png      → Assinatura "Dra. Ana Carolina de Castro" (fundo transparente)
+                               → Usada como LOGO no topo do site e no rodapé
+
+  images/dra-vestido.jpg     → Foto da Dra. de vestido marrom (usada no HERO – fundo principal)
+
+  images/dra-consultorio.jpg → Foto da Dra. no consultório, fundo branco (seção "Sobre")
+
+  images/dra-estudio.jpg     → Foto da Dra. no estúdio, roupa preta (seção "Diferenciais")
+
+  images/clinica.jpg         → Foto da fachada da clínica SALT (seção "A Clínica")
+
+PERSONALIZAR:
+-------------
+Abra o "index.html" em qualquer editor de texto (Bloco de Notas, VS Code, etc.)
+e substitua os trechos marcados com ⚠️:
+
+1. NÚMERO DE WHATSAPP
+   Procure por:  5500000000000
+   Substitua por: 55 + DDD + número (ex: 5562999999999)
+
+2. PERFIL DO INSTAGRAM
+   Procure por:  SEUPERFIL
+   Substitua por: o @ do perfil (ex: saltodontologia)
+
+3. ENDEREÇO DA CLÍNICA
+   Procure por:  "Goiânia – GO" na seção #clinica
+   Substitua pelo endereço completo
+
+4. NÚMEROS (500 sorrisos, 5+ anos, etc.)
+   Ajuste os números na seção id="numeros" conforme a realidade da Dra.
+
+5. INFORMAÇÕES PESSOAIS
+   Ajuste a bio da Dra. Ana na seção id="sobre" como desejar
+
+ESTRUTURA DE PASTAS:
+--------------------
+salt-site/
+├── index.html       ← arquivo principal do site
+├── images/          ← coloque as imagens aqui
+│   ├── clinica.jpg
+│   ├── dra-ana-1.jpg
+│   ├── dra-ana-2.jpg
+│   └── assinatura.png
+└── LEIA-ME.txt      ← este arquivo
+
+HOSPEDAR O SITE:
+----------------
+Para publicar na internet, recomendo:
+  → Hostinger (barato, suporte em pt-BR)
+  → Vercel (gratuito, upload da pasta)
+  → GitHub Pages (gratuito)
+
+Basta fazer upload de toda a pasta "salt-site/" para o servidor escolhido.
+
+===================================================
