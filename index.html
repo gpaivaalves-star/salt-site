@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Ana Carolina de Castro – SALT Odontologia e Estética</title>
+  <meta name="description" content="Odontologia e estética dental de alto padrão em Goiânia. Clareamento, lentes de contato dental, harmonização orofacial e muito mais." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --gold:    #C4A97D;
+      --gold-lt: #E0CEAD;
+      --dark:    #1A1A1A;
+      --mid:     #3D3D3D;
+      --cream:   #F7F3EE;
+      --white:   #FFFFFF;
+      --light:   #F0EBE3;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: 90%;
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    /* ─── NAVBAR ───────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      padding: 20px 0;
+      transition: background .35s, padding .35s, box-shadow .35s;
+    }
+
+    nav.scrolled {
+      background: rgba(26, 26, 26, 0.96);
+      padding: 14px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,.25);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .nav-logo img.logo-assinatura {
+      height: 42px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: .92;
+      transition: opacity .2s;
+    }
+    .nav-logo img.logo-assinatura:hover { opacity: 1; }
+    /* Fallback text logo */
+    .nav-logo .clinic-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      letter-spacing: .12em;
+      color: var(--white);
+      font-weight: 300;
+    }
+    .nav-logo .clinic-sub {
+      font-size: .65rem;
+      letter-spacing: .22em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.8);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 10px 26px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      transition: background .2s, color .2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--dark); }
+
+    /* Hamburger (mobile) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--white);
+      transition: .3s;
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      height: 100vh;
+      min-height: 620px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('dra-vestido.jpg') center top / cover no-repeat;
+    }
+    /* Fallback gradient when image is missing */
+    .hero-bg-fallback {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2c2218 60%, #1a1a1a 100%);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(10, 8, 5, 0.92) 0%,
+        rgba(10, 8, 5, 0.55) 50%,
+        rgba(10, 8, 5, 0.15) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-bottom: 90px;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-size: .7rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      font-weight: 300;
+      line-height: 1.08;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .hero-desc {
+      font-size: .95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.7);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: .75rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      transition: background .2s, transform .2s;
+    }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,.4);
+      color: var(--white);
+      font-size: .75rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 30px;
+      right: 40px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.4);
+      font-size: .6rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      51% { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ─── SOBRE ─────────────────────────────────────────────── */
+    #sobre {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 600px;
+    }
+
+    .sobre-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+    }
+    .sobre-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform .6s ease;
+    }
+    .sobre-img:hover img { transform: scale(1.03); }
+
+    /* Placeholder when image is missing */
+    .sobre-img-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, #2a2218, #3d3020);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sobre-content {
+      background: var(--cream);
+      padding: 90px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .section-eyebrow {
+      font-size: .65rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      color: var(--dark);
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .sobre-text {
+      font-size: .92rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+
+    .sobre-signature {
+      margin-top: 36px;
+      max-width: 260px;
+      opacity: .85;
+    }
+
+    .sobre-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+    .sobre-tag {
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+    }
+
+    /* ─── NUMBERS ───────────────────────────────────────────── */
+    #numeros {
+      background: var(--dark);
+      padding: 60px 0;
+    }
+    .numeros-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .numero-item {
+      text-align: center;
+      padding: 40px 24px;
+      border-right: 1px solid rgba(196,169,125,.18);
+    }
+    .numero-item:last-child { border-right: none; }
+    .numero-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .numero-label {
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+    }
+
+    /* ─── SERVIÇOS ──────────────────────────────────────────── */
+    #servicos {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-header .section-eyebrow { justify-content: center; }
+    .section-header .section-eyebrow::before { display: none; }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .servico-card {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      cursor: pointer;
+    }
+    .servico-card-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--cream);
+      transition: transform .5s ease;
+    }
+    .servico-card:hover .servico-card-bg { transform: scale(1.05); }
+
+    .servico-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,8,5,.85) 0%, rgba(10,8,5,.2) 60%, transparent 100%);
+      transition: background .3s;
+    }
+    .servico-card:hover .servico-card-overlay {
+      background: linear-gradient(to top, rgba(10,8,5,.92) 0%, rgba(10,8,5,.35) 70%, transparent 100%);
+    }
+
+    .servico-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px 28px;
+      transform: translateY(0);
+      transition: transform .3s;
+    }
+
+    .servico-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      color: var(--gold);
+      opacity: .4;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .servico-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .servico-desc {
+      font-size: .78rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.65);
+      line-height: 1.65;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease, opacity .4s;
+      opacity: 0;
+    }
+    .servico-card:hover .servico-desc {
+      max-height: 100px;
+      opacity: 1;
+    }
+
+    /* Service card background colors (until real images are placed) */
+    .servico-card:nth-child(1) .servico-card-bg { background: linear-gradient(145deg, #2a1f10, #1a1200); }
+    .servico-card:nth-child(2) .servico-card-bg { background: linear-gradient(145deg, #1a1a1a, #2d2010); }
+    .servico-card:nth-child(3) .servico-card-bg { background: linear-gradient(145deg, #221810, #301f08); }
+    .servico-card:nth-child(4) .servico-card-bg { background: linear-gradient(145deg, #181818, #231a0e); }
+    .servico-card:nth-child(5) .servico-card-bg { background: linear-gradient(145deg, #231508, #1c1810); }
+    .servico-card:nth-child(6) .servico-card-bg { background: linear-gradient(145deg, #1e1a14, #2a2010); }
+
+    /* Service icon decoration */
+    .servico-icon {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(196,169,125,.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .servico-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 1.2;
+    }
+
+    /* ─── DRA. ANA / DIFERENCIAL ─────────────────────────────── */
+    #diferenciais {
+      background: var(--cream);
+      padding: 100px 0;
+    }
+    .diferenciais-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .diferenciais-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .diferencial-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .diferencial-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      opacity: .5;
+      line-height: 1;
+      flex-shrink: 0;
+      width: 32px;
+    }
+    .diferencial-text h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+    .diferencial-text p {
+      font-size: .82rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    .diferenciais-img {
+      position: relative;
+    }
+    .diferenciais-img img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .diferenciais-img-placeholder {
+      width: 100%;
+      height: 560px;
+      background: linear-gradient(145deg, #2a2218, #3d3020);
+    }
+    .diferenciais-img-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--dark);
+      padding: 22px 26px;
+      border-left: 2px solid var(--gold);
+    }
+    .diferenciais-img-badge p {
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 4px;
+    }
+    .diferenciais-img-badge strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    /* ─── CLINICA ────────────────────────────────────────────── */
+    #clinica {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .clinica-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .clinica-img {
+      position: relative;
+      overflow: hidden;
+    }
+    .clinica-img img {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+    .clinica-img:hover img { transform: scale(1.03); }
+    .clinica-img-placeholder {
+      width: 100%;
+      height: 580px;
+      background: linear-gradient(145deg, #1a1814, #2a2216);
+    }
+
+    .clinica-address {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-top: 32px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(196,169,125,.25);
+    }
+    .clinica-address-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .clinica-address-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 1.5;
+    }
+    .clinica-address-text p {
+      font-size: .82rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+    .clinica-address-text strong {
+      font-weight: 500;
+      color: var(--dark);
+      display: block;
+      margin-bottom: 4px;
+      font-size: .85rem;
+    }
+
+    /* ─── CONTATO / CTA ──────────────────────────────────────── */
+    #contato {
+      position: relative;
+      padding: 120px 0;
+      overflow: hidden;
+    }
+    #contato::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--dark);
+    }
+    #contato::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(196,169,125,.08) 0%, transparent 70%);
+    }
+
+    .contato-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contato-left .section-title { color: var(--white); }
+    .contato-left .section-title em { color: var(--gold); }
+    .contato-left p {
+      font-size: .9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.6);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .contato-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .contato-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 28px;
+      border: 1px solid rgba(196,169,125,.3);
+      transition: border-color .2s, background .2s;
+      cursor: pointer;
+    }
+    .contato-btn:hover { border-color: var(--gold); background: rgba(196,169,125,.06); }
+    .contato-btn-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(196,169,125,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contato-btn-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold);
+    }
+    .contato-btn-text strong {
+      display: block;
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 2px;
+      letter-spacing: .05em;
+    }
+    .contato-btn-text span {
+      font-size: .73rem;
+      color: rgba(255,255,255,.45);
+      font-weight: 300;
+    }
+
+    /* Form side */
+    .contato-form-wrap {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(196,169,125,.15);
+      padding: 48px 40px;
+    }
+    .contato-form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 32px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(196,169,125,.2);
+      padding: 13px 16px;
+      font-family: 'Jost', sans-serif;
+      font-size: .85rem;
+      font-weight: 300;
+      color: var(--white);
+      transition: border-color .2s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .form-group select option { background: var(--dark); color: var(--white); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .btn-form {
+      width: 100%;
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      padding: 16px;
+      font-family: 'Jost', sans-serif;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-form:hover { background: var(--gold-lt); }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: #0f0f0f;
+      padding: 60px 0 30px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(196,169,125,.12);
+      margin-bottom: 30px;
+    }
+    .footer-brand .clinic-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--white);
+      font-weight: 300;
+      letter-spacing: .12em;
+    }
+    .footer-brand .clinic-sub {
+      font-size: .62rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 3px;
+      margin-bottom: 20px;
+    }
+    .footer-brand p {
+      font-size: .82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.4);
+      line-height: 1.75;
+      max-width: 300px;
+    }
+
+    .footer-col h5 {
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col ul a {
+      font-size: .8rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.45);
+      transition: color .2s;
+    }
+    .footer-col ul a:hover { color: var(--gold); }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .social-link {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(196,169,125,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .2s, background .2s;
+    }
+    .social-link:hover { border-color: var(--gold); background: rgba(196,169,125,.1); }
+    .social-link svg { width: 16px; height: 16px; fill: rgba(255,255,255,.5); transition: fill .2s; }
+    .social-link:hover svg { fill: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p {
+      font-size: .72rem;
+      color: rgba(255,255,255,.25);
+    }
+
+    /* ─── WHATSAPP FLOAT ─────────────────────────────────────── */
+    .wa-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 998;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      animation: waPulse 3s ease-in-out infinite;
+      transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.4); }
+      50% { box-shadow: 0 4px 32px rgba(37,211,102,.7); }
+    }
+
+    /* ─── MOBILE ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      #sobre { grid-template-columns: 1fr; }
+      .sobre-img { min-height: 400px; }
+      .sobre-content { padding: 60px 32px; }
+
+      .numeros-grid { grid-template-columns: repeat(2, 1fr); }
+      .numero-item:nth-child(2) { border-right: none; }
+
+      .servicos-grid { grid-template-columns: 1fr 1fr; }
+
+      .diferenciais-inner,
+      .clinica-inner,
+      .contato-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .diferenciais-img-badge { right: 0; bottom: 0; }
+
+      .footer-top { grid-template-columns: 1fr; gap: 40px; }
+
+      .hero-scroll { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .servicos-grid { grid-template-columns: 1fr; }
+      .contato-form-wrap { padding: 32px 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-outline { text-align: center; justify-content: center; }
+    }
+
+    /* Mobile nav open */
+    nav.nav-open .nav-links {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,8,5,.97);
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      z-index: 998;
+    }
+    nav.nav-open .nav-links a { font-size: 1rem; }
+    nav.nav-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    nav.nav-open .hamburger span:nth-child(2) { opacity: 0; }
+    nav.nav-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─────────────────────────── -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <img src="assinatura.png" alt="Dra. Ana Carolina de Castro"
+               class="logo-assinatura"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <span style="display:none; flex-direction:column;">
+            <span class="clinic-name">Dra. Ana Carolina</span>
+            <span class="clinic-sub">Odontologia e Estética</span>
+          </span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#clinica">A Clínica</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+
+        <a href="https://wa.me/5500000000000?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+           target="_blank" class="nav-cta" id="navCta">Agendar Consulta</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ───────────────────────────── -->
+  <section id="hero">
+    <div class="hero-bg-fallback"></div>
+    <div class="hero-bg" style="background-image: url('dra-vestido.jpg');"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <p class="hero-eyebrow">Dra. Ana Carolina de Castro</p>
+      <h1 class="hero-title">
+        Realce sua beleza.<br>
+        Eleve sua<br>
+        <em>autoestima.</em>
+      </h1>
+      <p class="hero-desc">
+        Procedimentos estéticos personalizados para quem quer se sentir
+        bem consigo mesma — com naturalidade, técnica e cuidado.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5500000000000?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+           target="_blank" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Agendar Consulta
+        </a>
+        <a href="#sobre" class="btn-outline">Conhecer a Dra.</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ─── SOBRE ──────────────────────────── -->
+  <section id="sobre">
+    <div class="sobre-img">
+      <img src="dra-consultorio.jpg" alt="Dra. Ana Carolina de Castro"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="sobre-img-placeholder" style="display:none;"></div>
+    </div>
+    <div class="sobre-content">
+      <p class="section-eyebrow">Quem é a Dra. Ana</p>
+      <h2 class="section-title">
+        Ciência, arte<br>
+        e <em>dedicação</em><br>
+        ao seu sorriso
+      </h2>
+      <p class="sobre-text">
+        A Dra. Ana Carolina de Castro é cirurgiã-dentista especializada em odontologia estética e reabilitadora.
+        Com formação sólida e olhar clínico apurado, combina técnica de ponta e sensibilidade artística para
+        criar sorrisos harmônicos e naturais.
+      </p>
+      <p class="sobre-text">
+        Atende na <strong>SALT Odontologia e Estética</strong>, uma clínica criada para oferecer uma experiência
+        completa — do diagnóstico ao resultado final — em um ambiente sofisticado e acolhedor.
+      </p>
+      <img src="assinatura.png" alt="Dra. Ana Carolina de Castro"
+           class="sobre-signature"
+           onerror="this.style.display='none';" />
+      <div class="sobre-tags">
+        <span class="sobre-tag">Odontologia Estética</span>
+        <span class="sobre-tag">Harmonização Orofacial</span>
+        <span class="sobre-tag">Reabilitação Oral</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── NÚMEROS (removido) ───────────────
+  <section id="numeros">
+    <div class="container">
+      <div class="numeros-grid">
+        <div class="numero-item">
+          <div class="numero-value">+500</div>
+          <div class="numero-label">Sorrisos Transformados</div>
+        </div>
+        <div class="numero-item">
+          <div class="numero-value">5+</div>
+          <div class="numero-label">Anos de Experiência</div>
+        </div>
+        <div class="numero-item">
+          <div class="numero-value">100%</div>
+          <div class="numero-label">Foco em Resultado</div>
+        </div>
+        <div class="numero-item">
+          <div class="numero-value">1</div>
+          <div class="numero-label">Missão: Seu Sorriso</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  ─────────────────────────────────────────── -->
+
+  <!-- ─── SERVIÇOS ───────────────────────── -->
+  <section id="servicos">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">O que oferecemos</p>
+        <h2 class="section-title">Nossos <em>Tratamentos</em></h2>
+      </div>
+    </div>
+    <div class="servicos-grid">
+
+      <div class="servico-card">
+        <div class="servico-card-bg"></div>
+        <div class="servico-card-overlay"></div>
+        <div class="servico-card-content">
+          <div class="servico-num">01</div>
+          <h3 class="servico-name">Lentes de Contato Dental</h3>
+          <p class="servico-desc">Facetas ultrafinas de porcelana que transformam forma, cor e proporção do seu sorriso com mínimo desgaste.</p>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-card-bg"></div>
+        <div class="servico-card-overlay"></div>
+        <div class="servico-card-content">
+          <div class="servico-num">02</div>
+          <h3 class="servico-name">Clareamento Dental</h3>
+          <p class="servico-desc">Técnica profissional de clareamento para um sorriso mais branco, radiante e natural — sem prejudicar o esmalte.</p>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-card-bg"></div>
+        <div class="servico-card-overlay"></div>
+        <div class="servico-card-content">
+          <div class="servico-num">03</div>
+          <h3 class="servico-name">Harmonização Orofacial</h3>
+          <p class="servico-desc">Procedimentos minimamente invasivos para equilibrar as proporções do rosto e valorizar a beleza natural.</p>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-card-bg"></div>
+        <div class="servico-card-overlay"></div>
+        <div class="servico-card-content">
+          <div class="servico-num">04</div>
+          <h3 class="servico-name">Restaurações Estéticas</h3>
+          <p class="servico-desc">Resinas compostas de alta qualidade que restauram dentes com resultado idêntico ao natural.</p>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-card-bg"></div>
+        <div class="servico-card-overlay"></div>
+        <div class="servico-card-content">
+          <div class="servico-num">05</div>
+          <h3 class="servico-name">Preenchimento com Ácido Hialurônico</h3>
+          <p class="servico-desc">Volumização e definição de lábios, contorno facial e preenchimento de sulcos com resultado natural e duradouro.</p>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-card-bg"></div>
+        <div class="servico-card-overlay"></div>
+        <div class="servico-card-content">
+          <div class="servico-num">06</div>
+          <h3 class="servico-name">Toxina Botulínica (Botox)</h3>
+          <p class="servico-desc">Suavização de rugas de expressão e prevenção do envelhecimento facial com aplicação precisa e resultado sofisticado.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── DIFERENCIAIS ───────────────────── -->
+  <section id="diferenciais">
+    <div class="container">
+      <div class="diferenciais-inner">
+        <div>
+          <p class="section-eyebrow">Por que escolher</p>
+          <h2 class="section-title">Uma experiência <em>diferente</em> do início ao fim</h2>
+          <ul class="diferenciais-list">
+            <li class="diferencial-item">
+              <span class="diferencial-num">01</span>
+              <div class="diferencial-text">
+                <h4>Plano Personalizado</h4>
+                <p>Cada paciente recebe uma análise completa e um plano de tratamento feito sob medida para seus objetivos.</p>
+              </div>
+            </li>
+            <li class="diferencial-item">
+              <span class="diferencial-num">02</span>
+              <div class="diferencial-text">
+                <h4>Tecnologia de Ponta</h4>
+                <p>Equipamentos modernos e materiais premium para resultados precisos, duradouros e com máximo conforto.</p>
+              </div>
+            </li>
+            <li class="diferencial-item">
+              <span class="diferencial-num">03</span>
+              <div class="diferencial-text">
+                <h4>Ambiente Premium</h4>
+                <p>Uma clínica projetada para proporcionar conforto, privacidade e uma experiência agradável do início ao fim.</p>
+              </div>
+            </li>
+            <li class="diferencial-item">
+              <span class="diferencial-num">04</span>
+              <div class="diferencial-text">
+                <h4>Resultados Naturais</h4>
+                <p>Estética com propósito — sorrisos que realçam a beleza de cada paciente, respeitando sua individualidade.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="diferenciais-img">
+          <img src="dra-estudio.jpg" alt="Dra. Ana Carolina de Castro"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div class="diferenciais-img-placeholder" style="display:none;"></div>
+          <div class="diferenciais-img-badge">
+            <p>Cirurgiã-Dentista</p>
+            <strong>Dra. Ana Carolina de Castro</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CLÍNICA ────────────────────────── -->
+  <section id="clinica">
+    <div class="container">
+      <div class="clinica-inner">
+        <div>
+          <p class="section-eyebrow">Nossa Clínica</p>
+          <h2 class="section-title">SALT<br><em>Odontologia</em><br>e Estética</h2>
+          <p class="sobre-text" style="margin-top:16px;">
+            A SALT é uma clínica odontológica e estética criada para oferecer um atendimento de excelência.
+            Um espaço onde modernidade, sofisticação e cuidado se encontram para proporcionar a melhor experiência ao paciente.
+          </p>
+          <p class="sobre-text">
+            Localizada em Goiânia, a clínica conta com estrutura completa, tecnologia atual e uma equipe dedicada
+            a transformar sorrisos com segurança e elegância.
+          </p>
+
+          <div class="clinica-address">
+            <div class="clinica-address-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </div>
+            <div class="clinica-address-text">
+              <strong>Endereço</strong>
+              <p>Goiânia – GO<br>
+              <em style="font-size:.75rem; color: var(--gold);">Consulte o endereço exato pelo WhatsApp</em></p>
+            </div>
+          </div>
+
+          <div class="clinica-address" style="border-top: 1px solid rgba(196,169,125,.25); padding-top:20px;">
+            <div class="clinica-address-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+              </svg>
+            </div>
+            <div class="clinica-address-text">
+              <strong>Horário de Atendimento</strong>
+              <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 13h</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="clinica-img">
+          <img src="clinica.jpg" alt="SALT Odontologia e Estética – Goiânia"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div class="clinica-img-placeholder" style="display:none; width:100%; height:580px; background:linear-gradient(145deg,#1a1814,#2a2216);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTATO ────────────────────────── -->
+  <section id="contato">
+    <div class="container">
+      <div class="contato-inner">
+
+        <div class="contato-left">
+          <p class="section-eyebrow" style="color: var(--gold);">Fale com a gente</p>
+          <h2 class="section-title" style="color: var(--white);">
+            Agende sua<br><em>consulta</em>
+          </h2>
+          <p>
+            Dê o primeiro passo para o sorriso que você merece. Entre em contato pelo WhatsApp
+            ou preencha o formulário — retornamos rapidamente.
+          </p>
+
+          <div class="contato-btns">
+            <a href="https://wa.me/5500000000000?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+               target="_blank" class="contato-btn">
+              <div class="contato-btn-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <div class="contato-btn-text">
+                <strong>WhatsApp</strong>
+                <span>Atendimento rápido e agendamento</span>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/SEUPERFIL" target="_blank" class="contato-btn">
+              <div class="contato-btn-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+              </div>
+              <div class="contato-btn-text">
+                <strong>Instagram</strong>
+                <span>Veja nossos resultados</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contato-form-wrap">
+          <p class="contato-form-title">Solicitar Agendamento</p>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" />
+            </div>
+            <div class="form-group">
+              <label for="telefone">WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" />
+            </div>
+            <div class="form-group">
+              <label for="servico">Serviço de interesse</label>
+              <select id="servico" name="servico">
+                <option value="">Selecione...</option>
+                <option>Lentes de Contato Dental</option>
+                <option>Clareamento Dental</option>
+                <option>Harmonização Orofacial</option>
+                <option>Restaurações Estéticas</option>
+                <option>Preenchimento com Ácido Hialurônico</option>
+                <option>Toxina Botulínica (Botox)</option>
+                <option>Consulta de Avaliação</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem (opcional)</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre o que você precisa..."></textarea>
+            </div>
+            <button type="button" class="btn-form" onclick="enviarWhatsApp()">
+              Enviar pelo WhatsApp
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assinatura.png" alt="Dra. Ana Carolina de Castro"
+               style="height:38px; width:auto; filter:brightness(0) invert(1); opacity:.7; margin-bottom:10px;"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div class="clinic-name" style="display:none;">Dra. Ana Carolina</div>
+          <div class="clinic-sub">Odontologia e Estética · SALT</div>
+          <p>Transformando sorrisos com ciência, técnica e dedicação. Atendimento personalizado em um ambiente de alto padrão.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/SEUPERFIL" target="_blank" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/5500000000000" target="_blank" class="social-link" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Tratamentos</h5>
+          <ul>
+            <li><a href="#servicos">Lentes de Contato Dental</a></li>
+            <li><a href="#servicos">Clareamento Dental</a></li>
+            <li><a href="#servicos">Harmonização Orofacial</a></li>
+            <li><a href="#servicos">Restaurações Estéticas</a></li>
+            <li><a href="#servicos">Preenchimento com Ácido Hialurônico</a></li>
+            <li><a href="#servicos">Toxina Botulínica (Botox)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Links</h5>
+          <ul>
+            <li><a href="#sobre">Sobre a Dra. Ana</a></li>
+            <li><a href="#clinica">A Clínica</a></li>
+            <li><a href="#contato">Agendar Consulta</a></li>
+            <li><a href="https://www.instagram.com/SEUPERFIL" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 SALT Odontologia e Estética · Todos os direitos reservados.</p>
+        <p>Dra. Ana Carolina de Castro</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── WHATSAPP FLOAT ──────────────────── -->
+  <a href="https://wa.me/5500000000000?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+     target="_blank" class="wa-float" aria-label="Fale pelo WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ─── SCRIPTS ────────────────────────── -->
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('nav-open');
+      document.body.style.overflow = navbar.classList.contains('nav-open') ? 'hidden' : '';
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('nav-open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Form → WhatsApp
+    function enviarWhatsApp() {
+      const nome     = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const servico  = document.getElementById('servico').value;
+      const msg      = document.getElementById('mensagem').value.trim();
+
+      if (!nome || !telefone) {
+        alert('Por favor, preencha seu nome e WhatsApp.');
+        return;
+      }
+
+      let texto = `Olá! Vim pelo site e gostaria de agendar uma consulta.%0A%0ANome: ${encodeURIComponent(nome)}%0AWhatsApp: ${encodeURIComponent(telefone)}`;
+      if (servico) texto += `%0AServiço: ${encodeURIComponent(servico)}`;
+      if (msg)     texto += `%0AMensagem: ${encodeURIComponent(msg)}`;
+
+      // ⚠️ Substitua pelo número real da clínica
+      window.open(`https://wa.me/5500000000000?text=${texto}`, '_blank');
+    }
+
+    // Smooth reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.numero-item, .servico-card, .diferencial-item, .sobre-content, .clinica-img').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity .6s ease, transform .6s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
